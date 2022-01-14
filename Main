@@ -1,0 +1,174 @@
+import java.util.*;
+
+public class Main {
+    public static final int[] KP01_RARITY_DIST = {22, 16, 6, 4, 3};
+    public static final String[] KP01_COMMONS = {"Lizard Soldier", "Lesser Dragon", "Ancient Turtle Protector", "Binding Chain", "Tang the Noodle Ninja", "Little D", "Arma Knight", "Petit Moth", "Skull Servant", "Silver Fang", "Fire Golem", "Hilt, the Bearer of Noble Arms", "Thunder the Thunder", "Diabolic King Beetle", "Pierce!", "Recovery Force", "Seal of the Ancients", "Sparks", "Darkness Approaches", "One-Side Reverse", "Gust", "1-Up"};
+    public static final String[] KP01_RARES = {"Feral Imp", "Faith Bird", "LaMoon", "Machine Attacker", "Crawling Dragon", "Max Raider", "Kuribot", "Sportsdragon Pitcher", "Sportsdragon Slugger", "Defender of Dragon Sorcerers", "Sonic Attacker", "Mask of Volos", "Road Magic - Tempest", "Mountain", "Counter Cannonball", "Call of the Earthbound"};
+    public static final String[] KP01_SUPER_RARES = {"Whispering Fairy", "Raidacross, Hero of the Dawn", "Spice the Elite Noodle Ninja", "Battle Shark Samegalon", "Hammer Crush", "Brutal Retribution"};
+    public static final String[] KP01_ULTRA_RARES = {"Sevens Road Witch", "Dragonic Slayer", "Prima Guitarna the Shining Superstar", "Yamiruler the Dark Delayer"};
+    public static final String[] KP01_RUSH_RARES = {"Blue-Eyes White Dragon", "Sevens Road Magician", "Multistrike Dragon Dragias"};
+    public static final String[][] KP01 = {KP01_COMMONS, KP01_RARES, KP01_SUPER_RARES, KP01_ULTRA_RARES, KP01_RUSH_RARES};
+
+    public static final int[] KP02_RARITY_DIST = {22, 16, 6, 4, 3};
+    public static final String[] KP02_COMMONS = {"Wattkiss", "Watangel", "Mammoth Graveyard", "Bubbly Elf", "LaMoon the Party Princess", "Beast Gear Gyro Jackal", "Beast Gear Buggy Dog", "Jet Barracuda", "Heat Dartfish", "Harpie Girl", "Vishwar Randi", "Romic n' Roller", "Nandes the Fire Awakener", "Lullabind", "Party Party Party", "Thousand Knives", "Dark Magic Attack", "Attribute Shift Bomb", "Blue Medicine", "Party Time - Disco Ball", "Double Block", "Driving Snow"};
+    public static final String[] KP02_RARES = {"Sportsdragon Keeper", "Megazowler", "Kanan the Sword Diva", "Beast Gear Moto Wolf", "Sportsdragon Defender", "Sportsdragon Striker", "Romanpick", "Hydro Cannon Big Bluefin", "Archfiend's Summoning Flute", "Shaman Octopus", "Innocent Lancer", "Road Magic - Tectonic Shift", "Apocalypse - Beast Gear World", "Blades of Divine Wind", "Rage and Conspiracy", "Phantom Bind"};
+    public static final String[] KP02_SUPER_RARES = {"Sevens Road Mage", "Dian Keto the Boogie Master", "Beast Gear Emperor Catapult Kong", "Super King Rex", "Wicked Shadow Dark Lurker", "Siesta Hold"};
+    public static final String[] KP02_ULTRA_RARES = {"Full Meteor Impact", "Shock Dragon", "Piercing Dragon Bunker Strike", "Esperade the Smashing Superstar"};
+    public static final String[] KP02_RUSH_RARES = {"Dark Magician", "Lightning Voltcondor", "Royal Rebel's Heavy Metal"};
+    public static final String[][] KP02 = {KP02_COMMONS, KP02_RARES, KP02_SUPER_RARES, KP02_ULTRA_RARES, KP02_RUSH_RARES};
+
+    public static final int[] CP01_RARITY_DIST = {18, 12, 6, 3, 1};
+    public static final String[] CP01_COMMONS = {"Yurushima Warrior", "Blue Falcon Tengu", "Yurushima the Hermit", "Crying Moon Rabbit", "Powerful Pierce!!", "Scroll of Salutation", "Royal Rebel's Shout", "Followl of the Dark Wisdom", "Garmr the Lone Wolf", "Babysitter Goat", "Royal Rebel's Fanatic", "King's Reward", "Telepathic Agent", "Concert Costume Creator", "Keytar Kid", "Howlingbird", "Elepsychic Amp Up", "Psychic Introduction"};
+    public static final String[] CP01_RARES = {"Masaki the Legendary Samurai", "Bonded Bowing", "Block Attack", "Hermit's Soul", "Palace Gargoyle", "Genie's Fire Breath", "King's Majesty", "Rebel's Scream", "Amusi Performer", "Psy Stage Bouncer", "Climax Finale", "Severing Psychic Wall"};
+    public static final String[] CP01_SUPER_RARES = {"Umegumi the Ruler's Squad", "Yurushima Sage", "Royal Rebel's Growl", "Royal Rebel's Rocker", "Berry Bassist", "Psychic Divergence"};
+    public static final String[] CP01_ULTRA_RARES = {"Kimeruler the Dark Raider", "Royal Rebel's Invasion", "Folder Blitz the Infinite Dream"};
+    public static final String[] CP01_SECRET_RARES = {"Shield & Sword"};
+    public static final String[][] CP01 = {CP01_COMMONS, CP01_RARES, CP01_SUPER_RARES, CP01_ULTRA_RARES, CP01_SECRET_RARES};
+
+    public static final int[] KP03_RARITY_DIST = {29, 17, 7, 5, 3};
+    public static final String[] KP03_COMMONS = {"Scoop Scooter", "Stock the Noodle Ninja", "Mushroom Man", "Niwatori", "Chu-Ske the Mouse Fighter", "Baby Dragon", "Hitotsu-Me Giant", "Ojisan", "Silver Wolf", "Sieth, the Scabbard of Noble Arms", "Treasure Dragon", "Kesshin the Dark Decimator", "Seahorse Server", "Seahorse Carrier", "Beast Gear Trike Fox", "Luminous Parrot", "Survival Swordfish", "Dragon's Return", "Blazing Chestnut", "The Noodle Art of Spicery", "The Noodle Art of Savory", "Shining City Nights", "Aqua Boost", "Big Umi", "Thousand Attack Rocket", "Bait Bite Ball", "Counter Pigeons", "Triple Trio", "Faulty Fire"};
+    public static final String[] KP03_RARES = {"Light Sorcerer", "Doriado", "Water Magician", "Gazelle the King of Mythical Beasts", "Echeclus the Star Knight", "Savage Claw Tiger", "Dragon Merchant", "Vishwar Lambadi", "Anchor Moray", "Trick Pigeon", "Long Shield Gardna", "Eldign Patrol Ship", "Triple Threat Thunder", "Umi", "Forest", "Counter Shield", "Giant Tortoise of Greed"};
+    public static final String[] KP03_SUPER_RARES = {"Sparkhearts Girl", "Beast Summoner", "Clear Ice Dragon", "Burning Blaze Dragon", "Printing Presser", "Rightful Magic", "Soul of a Reporter"};
+    public static final String[] KP03_ULTRA_RARES = {"Ancient Arise Dragon", "Beast Gear King Convoy Liogon", "Extra Spice the Elite Noodle Ninja", "Darkness Crested Hawk", "Sea Dragon King Granganus"};
+    public static final String[] KP03_RUSH_RARES = {"Summoned Skull", "Bendorbreak the Conqueror", "Illusion Strike Dragon Miragias"};
+    public static final String[][] KP03 = {KP03_COMMONS, KP03_RARES, KP03_SUPER_RARES, KP03_ULTRA_RARES, KP03_RUSH_RARES};
+
+    public static final int[] MAX1_RARITY_DIST = {20, 14, 8, 6, 2};
+    public static final String[] MAX1_COMMONS = {"Pair Production", "Scrubbing Santa Cloth", "Washsprayer the Cleansketeer", "Red-Eyes Black Cat", "Blue-Eyes White Cat", "Cat's Eye", "Lost Cat", "Thunderbeetle Bassdrum", "Thunderbeetle Highhat", "Thunderbeetle Snare", "Thunderbeetle Gift", "Thunderbeetle Storm", "Thunderbeetle Boost", "Scarechair Gear", "Scarechair Bone", "Scarechair Saber", "Galaxy Topping Troll", "Cosmoscallion", "Big Bang Egger", "Chashooting Star"};
+    public static final String[] MAX1_RARES = {"Kuribot", "Kuripotriple", "Silent Learning", "Peacock Picotron", "Femtron", "Attron", "Zeptron", "Yoctron", "Quantum Hole", "Bleach Mortar", "Throne of Darkness", "Collapsing Chairs", "Outer Space", "Shrinker Shrimp"};
+    public static final String[] MAX1_SUPER_RARES = {"Cranked to Ten!!", "Magiquartet Shock", "Widening Whisper", "Clean Beret - Colonel Mop", "Odd-Eyes Twin Tail Cat", "Dahut, Dark Ruler of the Chair", "Cosmic String Noodryad", "Heavenly Gift"};
+    public static final String[] MAX1_ULTRA_RARES = {"Supreme Machine Magnum Overlord [L]", "Supreme Machine Magnum Overlord", "Supreme Machine Magnum Overlord [R]", "Yggdrago the Sky Emperor [L]", "Yggdrago the Sky Emperor", "Yggdrago the Sky Emperor [R]"};
+    public static final String[] MAX1_SECRET_RARES = {"Trap Hole", "Card Destruction"};
+    public static final String[][] MAX1 = {MAX1_COMMONS, MAX1_RARES, MAX1_SUPER_RARES, MAX1_ULTRA_RARES, MAX1_SECRET_RARES};
+
+    public static final int[] KP04_RARITY_DIST = {29, 17, 7, 5, 3};
+    public static final String[] KP04_COMMONS = {"Constructor Soldier Drillzard", "Constructor Battler Big Roller", "Brassaxophone the Music Princess", "Bull Breaker", "Oppressed Ant", "United Ants", "Ants Running About", "Tsuvolcano", "Enchanting Mermaid", "Descendant of Titans", "Grace Princess Kana", "Silent Assailant", "Insurrection Dragon", "Tama the Mancer Cat", "Nuncharinet the Music Princess", "Trumpetonfa the Music Princess", "Antrebellion of the Rebellion", "Aromagmabear", "Magmassage", "Type Change Beam", "Music Princess's Breath", "Heavy Cavalry Tactics", "Apocalypse - Legend of the Warrior", "Constructor Blockade", "Heavy Cavalry Starter", "Gi-ant Revolution", "Antiberty Flag", "Earth Pressure Explosion", "Jewelry Trap Hole"};
+    public static final String[] KP04_RARES = {"Constructor Warrior Shovelon", "Flutomahawk the Music Princess", "Modorina the Light Retriever", "Picklon the Constructor Fairy", "Ensembullfighter the Music Fiend", "Gingangel, the Deluxe Sushi Fairy", "Drilling Mandrill", "Anmagmabear", "Magmax Mantleveda", "Sakakaze the Talismanic Warrior", "Ancient Barrier", "Evil Star Beacon", "Geological Survey", "Primal Howling", "Fiery Blaze", "Sogen", "Constructor Ambush"};
+    public static final String[] KP04_SUPER_RARES = {"Chemical Cure Blue", "Shield Boring Kong", "Peaks of Blisstopia", "Grand Extreme", "Triangle Reborn", "Sword & Shield", "Beast Gear Secret Art - Primal Fist"};
+    public static final String[] KP04_ULTRA_RARES = {"Semeruler the Dark Summoner", "Wyrm Excavator the Heavy Cavalry Draco [L]", "Wyrm Excavator the Heavy Cavalry Draco", "Wyrm Excavator the Heavy Cavalry Draco [R]", "Digisoon the Music Fiend"};
+    public static final String[] KP04_RUSH_RARES = {"Jinzo", "Steel Mech Lord Mirror Innovator", "Constructor Wyrm Buildragon"};
+    public static final String[][] KP04 = {KP04_COMMONS, KP04_RARES, KP04_SUPER_RARES, KP04_ULTRA_RARES, KP04_RUSH_RARES};
+
+    public static final int[] KP05_RARITY_DIST = {31, 18, 9, 4, 4};
+    public static final String[] KP05_COMMONS = {"Royal Rebel's No Wave", "Enguarding Mermaid", "Kurobana the Shadow Flower Wolf", "Lindo the Shadow Flower Warrior", "Bombing Bird", "Grass", "Surge Bolt Lizard", "Metal Armored Ant", "Andoll", "Tranquil Unknown Soldier", "Royal Rebel's Phaser", "Mimosa the Shadow Flower Monk", "Gekka the Shadow Flower Beauty", "Blasting Bird", "Maginical Miracle", "Coiled Dragon of Fertility", "JAM:P Start!", "Royal Rebel's Command", "Vicissitude of Providence", "Prison Island Ane Go Rock", "Shadow Flower Spore", "Apocalypse - The Unstoppable Beast-Warrior", "Majinrai, the Magical Lightning", "Invading Nature", "Pretty☆Witch Imprisonment", "All For Naught - Bubble Burst", "Shadow Flower Return", "Brocoohearted Pigeon", "Clowning Cookoo Clock", "Maraimei, the Dark Fire", "Laughing Grass"};
+    public static final String[] KP05_RARES = {"The Fire Dragon", "Kanan the Warden Mistress", "Baked Bean Soldier", "Tenacity Dragon", "Takegumi the Ruler's Squad", "Demonic Hermit Vessel Icezark", "Vice Jacker", "Gajuumaru the Shadow Flower Orchid Lion", "Gatling the Shadow Flower Shinobi", "Night Vision the Phantom Pigeon", "JAM:P Up!", "Royal Rebel's Live Arena", "Last Day of the Pretty☆Witch", "Moisturize", "Avian Spell Strategy", "Wasteland", "Shadow Flower Stance", "Archfiend's Incarnation"};
+    public static final String[] KP05_SUPER_RARES = {"CAN:D", "Dian Keto the Security Master", "Etraynze the Shadow Flower Ninja", "Siesta Torero", "Cheron the Star Knight", "The Menacing Eyes of the Heavenly Emperor", "Judgement of the Rising Light", "Music Princess's Solo Performance", "Acetic Acid Trap Hole"};
+    public static final String[] KP05_ULTRA_RARES = {"Hyper Engine Vast Vulcan [L]", "Hyper Engine Vast Vulcan", "Hyper Engine Vast Vulcan [R]", "Garland the True Shadow Flower Ninja"};
+    public static final String[] KP05_RUSH_RARES = {"Buster Blader", "Ice Age Catapult", "CAN - Re:D", "Royal Rebel's Doom Metal"};
+    public static final String[][] KP05 = {KP05_COMMONS, KP05_RARES, KP05_SUPER_RARES, KP05_ULTRA_RARES, KP05_RUSH_RARES};
+
+    public static final int[] MAX2_RARITY_DIST = {20, 14, 8, 6, 2};
+    public static final String[] MAX2_COMMONS = {"Zenigebazauls", "Terrorsaur Sternptera", "Uraby", "Celebrontosaurus", "Platinumdon", "Miraculous Coevolution", "Transcendental Evolution", "Scarechair Massage", "Scarechair Scale", "Darkness Rit-chair-al", "Joint Chair", "Clubinet the Music Princess", "One-Breath Piercing", "Music Princess's Twin Squall", "Music Princess Secret Art - Triple Tiger", "Dragon Roll the Sushi Angel", "Monkey Roll the Sushi Angel", "Spider Roll the Sushi Angel", "Rolling Never Die", "Rolling Hot Arrow"};
+    public static final String[] MAX2_RARES = {"Emergency Return", "Mech Therizinoraptor", "Upstart King Rex", "Jurassic World", "Dinomic Pressure", "Cycliptron", "Dahut Ahez, Mirror Ruler of the Chair", "The Snow-Capped Summit of Spectral Shangri-La", "Constructor Secret Art - High Speed Demolition", "Hammer Crush", "Constructor Return", "Tiger Roll the Sushi Angel", "Inside Roll Out", "Angel Judge"};
+    public static final String[] MAX2_SUPER_RARES = {"Dinosaur Crush", "Seedclotron Brusseln", "Constructor Demolition Wyrm Dracrush", "Horn Wan Yue the Music Princess", "Agaribel the Finest Sushi Angel", "Startup Goblin", "Heavenly Revelation", "Turnback Shot"};
+    public static final String[] MAX2_ULTRA_RARES = {"Supreme Flagship Magnum Overlord [L]", "Supreme Flagship Magnum Overlord", "Supreme Flagship Magnum Overlord [R]", "Great Imperial Dinocarriage Dynarmix [L]", "Great Imperial Dinocarriage Dynarmix", "Great Imperial Dinocarriage Dynarmix [R]"};
+    public static final String[] MAX2_SECRET_RARES = {"Upstart Goblin", "Tribute to the Doomed"};
+    public static final String[][] MAX2 = {MAX2_COMMONS, MAX2_RARES, MAX2_SUPER_RARES, MAX2_ULTRA_RARES, MAX2_SECRET_RARES};
+
+    public static final int[] KP06_RARITY_DIST = {31, 18, 9, 4, 4};
+    public static final String[] KP06_COMMONS = {"Shining Employee Brand New", "Corporate Soldier Shine Black", "Battle Ox Tongue", "Roastic Horseman", "Covered Hippo", "Dogulce Jomont Blanc", "Grilled Pangolin", "Northern Gyoza Girl", "Whirlwind Phantom Beast Pazuzu", "Stock Buster the Terrorstriking Dragon", "Betrayer of Peace", "Shining SP Corporate Guard", "Jasmine the Shadow Flower Festival", "Assault Armored", "Heat Hyena", "Reset Runner", "Lindmühle", "Storm Sonic", "Strong Z", "Just Meat", "Burning Beast Quality", "Wild Kitchen", "Beast Battlefield Barrier", "Dried Fruit De-kako-ration", "Berserker Colosseum", "Mismatch Rivalry", "7 Chance", "Psychicounter", "Attack Salary Cut", "Battle Demotion", "Scaredy Cats"};
+    public static final String[] KP06_RARES = {"Checkrael the Sun Angel, Yo", "Archfiend Marmot of Nefaribousness", "Flying Kamakiri #2", "Handy Lady", "Demonic Hermit Vessel Kachisuzaku", "Mega Elephant the Mobile Beast Cavalry", "Dogulce Langue de Chakoki", "Dokidoki Hexenhaus", "Crafter Drone", "Gatekeeping Gargoyle", "Vietor the Prevailing Wind", "Road Magic - Resaltar", "Fiendish Commander Current", "Against Buster", "Deadly Business Card Exchange", "Iron Onslaught", "Rage of the Wild Beasts", "Covering Barrage"};
+    public static final String[] KP06_SUPER_RARES = {"Sevens Road Wiz", "Speedy Performer", "Future Diviner", "Harami Kushiro the Shichirin Samurai", "Bladesaurus", "JAM:P Set!", "Follow Wing World", "Talismanic Seal Array", "Fiendish Commander Deadly Duel"};
+    public static final String[] KP06_ULTRA_RARES = {"Shining Black Corporate King Arktalk the Corrupt", "Arzareth the Sweeping Wind", "Hypernova", "Eternal Freeze"};
+    public static final String[] KP06_RUSH_RARES = {"Cyber-Tech Alligator", "Thunderbold the Lightningfire Deity", "Steelstrike Dragon Metagias", "Air Formula Eagle"};
+    public static final String[][] KP06 = {KP06_COMMONS, KP06_RARES, KP06_SUPER_RARES, KP06_ULTRA_RARES, KP06_RUSH_RARES};
+
+    public static final int[] EXT1_RARITY_DIST = {20, 14, 8, 6, 2};
+    public static final String[] EXT1_COMMONS = {"Fire Jester", "Gracesaurus", "Serpainter", "Sword Dancer", "Magic Juggler", "Imaginary Ark Turbo", "Imaginary Ark Tower", "Imaginary Ark Turbulence", "Stray Familia", "Mr. Alche", "The☆Power-Up", "The☆Barrier", "Red Medicine", "Fearstute Followl", "Permylind Hicrotron", "Winged Celestial Dragon of Weal and Woe", "Remodeled Corporate Soldier Shine Organizer", "Labyrinth Tank", "Giga-Tech Wolf", "Spectral Swords of the Everloyal Guard"};
+    public static final String[] EXT1_RARES = {"Metallion Eraclestar", "Metallion Ladonstar", "Imaginary Actor", "Imaginary Ark Turnback", "Kuribottorero", "Kuribot", "Swordsman of Roadstar", "Sportsdragon Kickbase Master", "The☆Dragon", "Amusi Howling Performer", "Chemical Cure Purple", "Kengo Shogun of the Crescent Moon", "Yami", "Fusion"};
+    public static final String[] EXT1_SUPER_RARES = {"Whispark Fairy Girl", "Full Moon Dragon Umbrlancer F", "The☆Wyvern", "Chemical Cure Red", "Hyper Upstart King Rex", "Ether Seeker", "Priestess of Star Salvation", "Star Restart"};
+    public static final String[] EXT1_ULTRA_RARES = {"Metallion Asurastar", "Metallion Vritrastar", "Sevens Paladin the Magical Knight", "Superstrike Dragon Dragiastar F", "Shining Black Corporate King Great Arktalk the Corrupt", "Cannon Soldier"};
+    public static final String[] EXT1_SECRET_RARES = {"The Warrior Returning Alive", "Graceful Charity"};
+    public static final String[][] EXT1 = {EXT1_COMMONS, EXT1_RARES, EXT1_SUPER_RARES, EXT1_ULTRA_RARES, EXT1_SECRET_RARES};
+
+    public static final int[] KP07_RARITY_DIST = {31, 18, 9, 4, 4};
+    public static final String[] KP07_COMMONS = {"Valkyrian Sewkyrie", "Dolphin King Iruqua", "Gagaga Outfielder", "Achacha Catcher", "Zubaba Batter", "Reportrain", "Taste Inspector", "U.M.U. - Unidentified Mysterious Urchin", "Daybreak Warrior", "Mountain Storm Dragon", "Royal Rebel's Break", "Viskam Nanotron", "Light Dolphin", "Kataomoiruka", "Dododo Second", "Gogogo Umpire", "Reporter Racoon Miketan", "Sea Dragon Cranedross", "Super Magibase Magnum Overbase", "Vanishing Torrent", "Duplicate Newspaper", "Art of Masked Fiery Noodle Drawing-Out-The-Rich-Tasty-Flavor Reversal", "Creek", "Card Devastation", "Pair Collision", "Dolphin Counter", "Iruqua's Raging Waves", "Gagagaguts", "Request 9", "That's All from the Scene!", "It's an Accident!"};
+    public static final String[] KP07_RARES = {"Takriminos", "Masked Fiery Noodle Jonin Dai Up", "Psyphickupper", "Pierce-Enforcing Brave", "Sea Star Trooper", "Cleaning Machine Gorgain", "Dosodon", "Masked Fiery Noodle Tokunin Nikumashi Gockboot", "Masked Fiery Noodle Tokunin Miso Instant", "Hunter of Titan", "Fenrirewritter Sol", "Aegis of the Five Houses", "Unbelievarmor", "Hot-Blooded Spirits Stadium", "Tile Burn", "Art of Masked Fiery Noodle Scorching Burner", "Comeback! Feelshock!!", "Spiral Geyser"};
+    public static final String[] KP07_SUPER_RARES = {"Necroman III", "Mezame the Oni Commander", "Kimeluna the Lunar Dark Decider", "Headbutt Cachalot", "Uniform No. 99: Junior Baseball King Dragon, Home Groundra", "Brave of Chaos, Lydacross Ash", "Lightning Speed, the Rumbling Report Warship", "Shape of Aqua", "Hardefense Mission"};
+    public static final String[] KP07_ULTRA_RARES = {"Uniform No. 39: Junior Baseball King, Home", "Sea Dragon Knight", "Ship of Seven Treasures", "Back Beat"};
+    public static final String[] KP07_RUSH_RARES = {"Levia-Dragon - Daedalus", "Constructor Heavenly Wyrm Gantry Dragon", "CAN:D LIVE", "Yamiterasu the Divine Delayer"};
+    public static final String[][] KP07 = {KP07_COMMONS, KP07_RARES, KP07_SUPER_RARES, KP07_ULTRA_RARES, KP07_RUSH_RARES};
+
+    public static final int[] GRP1_RARITY_DIST = {22, 16, 7, 3, 7};
+    public static final String[] GRP1_COMMONS = {"Gyakutenno Megami", "Alligator's Sword", "Beaver Warrior", "Constructor Princess Pylon", "Karatake the Talismanic Warrior", "Unfulfilled Goblin", "Kaibaman", "Whispering Fairy", "Yuri the Shadow Flower Oni", "Black Dragon's Chick", "Ancient Barrier", "Crack Fall", "Grand Extreme", "Inferno Fire Blast", "Stardom Light", "Fusion", "Heavy Roller", "Apocalypse - Beast Gear World", "Peaks of Blisstopia", "Black Dragon's Bellow", "Trumpet to March", "Magiquartet Shock"};
+    public static final String[] GRP1_SUPER_RARES = {"Elegant Fire Bird Harpuia", "Daigyakutenno Megami", "Pholus the Star Knight", "Crystal Brain", "Ether Finder", "Phoenix Dragon", "Secret Order", "Geological Survey", "Cranked to Ten!!", "Dark Resonance Burst", "Burst Stream of Destruction", "Magical Stone Excavation", "Temporary Storm Blockade", "Counter Back", "Dark Revelation", "Heavenly Rest"};
+    public static final String[] GRP1_ULTRA_RARES = {"Ultimate Flag Mech Gold Rush", "Ancient Arrive Dragon", "CAN - Melo:D", "Kimeterasu the Rising Luna", "Royal Rebel's Hard Rock", "Attolashoot Highdron", "Infinidream Constructor Wyrm Buildrim"};
+    public static final String[] GRP1_SECRET_RARES = {"Dark Magician", "Red-Eyes Black Dragon", "Smashing Ground"};
+    public static final String[] GRP1_GOLD_RARES = {"Sevens Road Magician", "Multistrike Dragon Dragias", "Prima Guitarna the Shining Superstar", "Yamiruler the Dark Delayer", "Royal Rebel's Heavy Metal", "Yggdrago the Sky Emperor", "Constructor Wyrm Buildragon"};
+    public static final String[][] GRP1 = {GRP1_COMMONS, GRP1_SUPER_RARES, GRP1_ULTRA_RARES, GRP1_SECRET_RARES, GRP1_GOLD_RARES};
+
+    public static final int[] KP08_RARITY_DIST = {31, 18, 9, 4, 4};
+    public static final String[] KP08_COMMONS = {};
+    public static final String[] KP08_RARES = {};
+    public static final String[] KP08_SUPER_RARES = {};
+    public static final String[] KP08_ULTRA_RARES = {};
+    public static final String[] KP08_RUSH_RARES = {};
+    public static final String[][] KP08 = {KP08_COMMONS, KP08_RARES, KP08_SUPER_RARES, KP08_ULTRA_RARES, KP08_RUSH_RARES};
+
+    public static final String[][][] KP_LIST = {KP01, KP02, CP01, KP03, MAX1, KP04, KP05, MAX2, KP06, EXT1, KP07, GRP1, KP08};
+    public static final int[][] KP_RARITY_DIST = {KP01_RARITY_DIST, KP02_RARITY_DIST, CP01_RARITY_DIST, KP03_RARITY_DIST, MAX1_RARITY_DIST, KP04_RARITY_DIST, KP05_RARITY_DIST, MAX2_RARITY_DIST, KP06_RARITY_DIST, EXT1_RARITY_DIST, KP07_RARITY_DIST, GRP1_RARITY_DIST, KP08_RARITY_DIST};
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        menu();
+
+        System.out.print("Which pack would you like to open? ");
+        int pack = sc.nextInt();
+        System.out.print("How many packs would you like to open? ");
+        int num = sc.nextInt();
+        for (int i = 0; i < num; i++) {
+            System.out.println("--Pack " + (i + 1) + "--");
+            openPack(pack - 1);
+            System.out.println();
+        }
+    }
+
+    public static void menu() {
+        System.out.println("(1) KP01 - Hyperspeed Rush Road");
+        System.out.println("(2) KP02 - Shocking Lightning Attack");
+        System.out.println("(3) CP01 - Gakuto/Roa/Romin");
+        System.out.println("(4) KP03 - Fantastrike Mirage Impact");
+        System.out.println("(5) MAX1 - Maximum Ultra Enhancement");
+        System.out.println("(6) KP04 - Destined Power Destruction");
+        System.out.println("(7) KP05 - Dynamic Eternal Live");
+        System.out.println("(8) MAX2 - Maximum Ultra Evolution");
+        System.out.println("(9) KP06 - Fierce Thunder Storm");
+        System.out.println("(10) EXT1 - Extra Transcend Enhancement");
+        System.out.println("(11) KP07 - Chaotic Omega Rising");
+        System.out.println("(12) GRP1 - Gold Rush Pack");
+        System.out.println("(13) KP08 - Genesis Master Road");
+    }
+
+    public static void openPack(int kp) {
+        Random rand = new Random();
+        int card;
+        if (kp == 3 ||  kp == 5 || kp == 8 || kp == 10 || kp == 12) {
+
+        }
+        else {
+            //Roll the commons (3)
+            for (int i = 0; i < 3; i++) {
+                card = rand.nextInt(KP_RARITY_DIST[kp][0]);
+                System.out.println("Common: " + KP_LIST[kp][0][card]);
+            }
+            //Roll the rare (1)
+            card = rand.nextInt(KP_RARITY_DIST[kp][1]);
+            System.out.println("Rare: " + KP_LIST[kp][1][card]);
+            //Roll the random card (3/4 SR, 1/6 UR, 1/12 RR)
+            int roll = rand.nextInt(60);
+            if (roll <= 44) {
+                card = rand.nextInt(KP_RARITY_DIST[kp][2]);
+                System.out.println("Super Rare: " + KP_LIST[kp][2][card]);
+            }
+            else if (roll >= 45 && roll <= 54) {
+                card = rand.nextInt(KP_RARITY_DIST[kp][3]);
+                System.out.println("Ultra Rare: " + KP_LIST[kp][3][card]);
+            }
+            else {
+                card = rand.nextInt(KP_RARITY_DIST[kp][4]);
+                System.out.println("Rush Rare: " + KP_LIST[kp][4][card]);
+            }
+        }
+    }
+}
